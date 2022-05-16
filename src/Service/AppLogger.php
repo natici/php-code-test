@@ -10,9 +10,7 @@ class AppLogger
 
     public function __construct($type = self::TYPE_LOG4PHP)
     {
-        if ($type == self::TYPE_LOG4PHP) {
-            $this->logger = \Logger::getLogger("Log");
-        }
+        $this->logger = new LoggerFactory($type);
     }
 
     public function info($message = '')
